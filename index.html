@@ -437,7 +437,7 @@ var searchIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy
 function topbar(crumb) {
   return '<div class="topbar"><a class="brand" href="#">SQL Cheat Sheets</a><div class="crumbs">' + (crumb ? '<a href="#">Hub</a><span aria-hidden="true">/</span><span>' + esc(crumb) + '</span>' : '<span>8 sheets · real Postgres results · mind maps</span>') + '</div></div>';
 }
-function footer() { return '<footer><span>Original examples. Every result was produced by running the query in PostgreSQL 14 against the sample data. Progress is saved in this browser only.</span><span class="sign">Sagarika</span></footer>'; }
+function footer() { return '<footer><span>Every result was produced by running the query in PostgreSQL 14 against the sample data. Progress is saved in this browser only.</span><span class="sign">Sagarika</span></footer>'; }
 function total() { return SHEETS.reduce(function (n, s) { return n + countItems(s); }, 0); }
 
 /* ---------------- views ---------------- */
@@ -515,7 +515,6 @@ function sheet(s) {
     });
     html += "</div></section>";
   });
-  html += '<div class="tip"><span aria-hidden="true">👉</span><p>Want the traps behind these? Read <a href="https://sagarika-ramesh.github.io/sql-gotchas/" target="_blank" rel="noopener">SQL Gotchas, Illustrated</a>.</p></div>';
   html += '<div class="pager"><button type="button" data-go="' + prev.id + '"><small>Previous</small>' + esc(prev.title) + '</button><button type="button" data-go="' + next.id + '"><small>Next</small>' + esc(next.title) + '</button></div>' + footer();
   app.innerHTML = html;
   updateProg(s);
